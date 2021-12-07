@@ -10,6 +10,13 @@ The Blog app is a classic example of a blog website. It's a functional website t
 
 To get a local copy up and running follow these simple example steps.
 
+git clone https://github.com/Rustamxon7/Trending-Blog-app.git
+
+cd yourrepo
+
+and then all your step ... like bundle install and all.
+
+
 ### Prerequisites
 Ruby: 2.6.3 Rails: 5.2.3 Postgres: >=9.5
 
