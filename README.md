@@ -12,10 +12,7 @@ To get a local copy up and running follow these simple example steps.
 
 git clone https://github.com/Rustamxon7/Trending-Blog-app.git
 
-cd yourrepo
-
-and then all your step ... like bundle install and all.
-
+cd Trending-Blog-app
 
 ### Prerequisites
 Ruby: 2.6.3 Rails: 5.2.3 Postgres: >=9.5
