@@ -10,4 +10,4 @@ class Post < ApplicationRecord
   def update_post_counter
     author.update_attribute(:posts_counter, author.posts.count)
   end
-end 
+end
