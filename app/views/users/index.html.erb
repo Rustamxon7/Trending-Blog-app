@@ -1,4 +1,15 @@
-<h1>User name</h1>
-<p>User Title index</p>
-<p>Go to posts <a href="/users/index/posts">here</a></p>
-
+<div class="container">
+<section class="users-section">
+  <% @users.each do |user| %>
+  <div class="user-card">
+    <img src="https://avatars.githubusercontent.com/u/69011963?v=4" alt="User image" class="user-img" />
+    <div class="user-description">
+      <%= link_to user do%>
+      <h2 class="user-name"><%= user.name %></h2>
+      <% end %>
+      <p>Number of posts: <span id="user-posts"><%= user.posts_counter%></span></p>
+    </div>
+  </div>
+  <% end %>
+</section>
+</div>
