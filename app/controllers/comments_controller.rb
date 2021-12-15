@@ -7,13 +7,21 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.author_id = current_user.id
     @comment.post_id = params[:post_id]
-    @comment.save
-    redirect_to user_posts_path(current_user)
+    if @comment.save
+      flash[:notice] = 'Comment successfully added!'
+      redirect_to user_posts_path(current_user)
+    else
+      render :new
+    end
   end
 
   def destroy
     @comment = Comment.find(params[:id])
-    @comment.destroy
+    flash[:notice] = if @comment.destroy
+                       'Comment successfully deleted!'
+                     else
+                       'Comment could not be deleted!'
+                     end
     redirect_to user_posts_path(current_user)
   end
 

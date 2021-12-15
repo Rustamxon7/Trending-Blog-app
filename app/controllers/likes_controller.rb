@@ -3,6 +3,7 @@ class LikesController < ApplicationController
 
   def create
     @post.likes.create(author_id: current_user.id)
+    flash[:notice] = 'You liked this post!'
     redirect_to root_path
   end
 

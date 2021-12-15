@@ -1,7 +1,8 @@
 <div class="container">
+
 <section class="posts-page">
   <div class="user-card">
-    <img src="https://avatars.githubusercontent.com/u/69011963?v=4" alt="User image" class="user-img" />
+    <img src="<%= @user.photo %>" alt="User image" class="user-img" />
     <div class="user-description">
       <h1 class="user-name"><%= @user.name %></h1>
       <p>Number of posts: <span id="user-posts"><%= @user.posts_counter %></span></p>
@@ -15,7 +16,7 @@
         <h2><%= post.title %>L</h2>
         <span>Comments <%= post.comments.count %>, Likes <%= post.likes.count %></span>
       </div>
-      <p><%= post.text %></p>
+      <p><%= post.preview %>...</p>
     </div>
     <ul class="post-card__comments">
       <% post.recent_comments.each do |comment| %>
@@ -23,6 +24,8 @@
         <% end %>
     </ul>
   </div>
+
   <% end %>
+
 </section>
 </div>

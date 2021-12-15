@@ -7,6 +7,10 @@ class Post < ApplicationRecord
     comments.order(created_at: :desc).limit(3)
   end
 
+  def preview
+    text.split("\n").first(2).join("\n")
+  end
+
   after_save :update_post_counter
 
   private

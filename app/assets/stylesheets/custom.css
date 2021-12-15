@@ -123,11 +123,6 @@ p {
   flex-direction: column;
   align-items: center;
   gap: 2.4rem;
-  padding-top: 2.6rem;
-}
-
-.posts-page .user-card {
-  align-self: stretch;
 }
 
 /* post card */
@@ -147,12 +142,12 @@ p {
   font-size: 1.4rem;
 }
 
-.post-card__content {
-  margin-bottom: 1.6rem;
+.posts-page .user-card {
+  align-self: stretch;
 }
 
-.user-page-posts .post-card__content {
-  margin-bottom: 0;
+.post-card__content {
+  margin-bottom: 1.6rem;
 }
 
 .post-card p {
@@ -169,13 +164,186 @@ p {
   gap: 0.8rem;
 }
 
+.user-page-posts .post-card__content {
+  margin-bottom: 0;
+}
+
 /* POSTS PAGE */
 
 .full-post {
-  padding-top: 2.6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 3.6rem 0;
+}
+
+.full-post h1 {
+  font-size: 2.4rem;
+  color: #111827;
+  margin-bottom: 2.4rem;
+}
+
+/* comment */
+
+.comment {
+  display: flex;
+  gap: 1.6rem;
+  padding: 2.4rem 0 0 0;
+}
+
+.comment input {
+  width: 100%;
+  border: none;
+  background-color: #f6f7fc;
+  border-bottom: 1px solid #228be6;
+  font-size: 1.6rem;
+  color: #4b5563;
+  padding: 0.8rem 1.6rem;
+}
+
+.btn {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #fff;
+  background-color: #228be6;
+  padding: 0.8rem 1.6rem;
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+}
+
+.full-post .btn {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #fff;
+  background-color: #228be6;
+  padding: 0.8rem 1.6rem;
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  width: 15rem;
+}
+
+/* ADD POST */
+
+.add {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 2.4rem;
+  padding: 2.4rem;
+  margin: 2.4rem 0;
+  background-color: #fff;
+  border-radius: 00.6rem;
+  box-shadow: 0 0 1rem 0.4rem #bbbfca2d;
+}
+
+.add input,
+.add textarea {
+  width: 100%;
+  border: none;
+  background-color: #f6f7fc;
+  border-bottom: 1px solid #228be6;
+  font-size: 1.6rem;
+  color: #4b5563;
+  padding: 0.8rem 1.6rem;
+}
+
+.add textarea {
+  height: 22rem;
+}
+
+/* Add User or Log in */
+
+.login-section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: -4rem;
+}
+
+.logo {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  color: #4b5563;
+  margin: 20px 0;
+}
+
+.logo-container img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+.login-container {
+  width: auto;
+  min-width: 350px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0.1px 0.1px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container form {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-top: 10px;
+}
+
+.login-container form input {
+  width: 100%;
+  height: 30px;
+  background: #f3f4f6;
+  border-radius: 9px;
+  border: none;
+  padding: 0 10px;
+}
+
+.login-container form textarea {
+  width: 100%;
+  height: 30px;
+  background: #f3f4f6;
+  border-radius: 9px;
+  border: none;
+  padding: 10px;
+}
+
+.login-container form input[type='submit'] {
+  background: #fcd34d;
+  color: #000;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.add input:focus,
+.add textarea:focus {
+  outline-color: #74c0fc;
+}
+
+.comment input:focus {
+  outline-color: #74c0fc;
 }
 
 /* media queries for 950 and below */
@@ -191,6 +359,7 @@ p {
   }
 
   /* decrease fonts */
+
   h2 {
     font-size: 2rem;
   }
@@ -257,4 +426,17 @@ p {
     align-self: stretch;
     width: 100%;
   }
+}
+
+/* alert message */
+.alert {
+  margin: 2.4rem 0;
+  padding: 1.6rem 5.2rem;
+  color: #c92a2a;
+  background-color: #ffc9c9;
+  border-radius: 0.6rem;
+}
+
+.alert p {
+  font-size: 1.4rem;
 }
