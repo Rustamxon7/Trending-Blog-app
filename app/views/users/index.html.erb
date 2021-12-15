@@ -2,14 +2,18 @@
 <section class="users-section">
   <% @users.each do |user| %>
   <div class="user-card">
-    <img src="https://avatars.githubusercontent.com/u/69011963?v=4" alt="User image" class="user-img" />
+    <img src="<%= user.photo %>" alt="User image" class="user-img" />
     <div class="user-description">
       <%= link_to user do%>
       <h2 class="user-name"><%= user.name %></h2>
+      <%# destroy %>
+      <%= link_to "Delete", user, method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
       <p>Number of posts: <span id="user-posts"><%= user.posts_counter%></span></p>
     </div>
   </div>
   <% end %>
+  <%# create new user %>
+  <%= link_to "Create new user", new_user_path, class: 'btn'%>
 </section>
 </div>
