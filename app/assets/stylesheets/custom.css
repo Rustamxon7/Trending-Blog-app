@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #374151;
+  background-color: #f6f7fc;
+}
+
+h2 {
+  font-size: 2.4rem;
+  color: #111827;
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+/* set border radius */
+.user-card,
+.user-img,
+.user-page-info,
+.user-page-info img,
+.user-page-post,
+.post-card {
+  border-radius: 0.9rem;
+  box-shadow: 0 0 1rem 0.4rem #bbbfca2d;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+/* USERS */
+
+.users-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  justify-content: center;
+  padding: 2.4rem 0;
+}
+
+.user-card {
+  display: flex;
+  gap: 2.4rem;
+  padding: 1.6rem;
+  background-color: #fff;
+}
+
+.user-card img {
+  height: 9.6rem;
+  width: 9.6rem;
+  object-fit: cover;
+  object-position: top;
+}
+
+.user-name {
+  font-size: 3.2rem;
+  color: #111827;
+  letter-spacing: -0.05rem;
+}
+
+.user-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.user-description p {
+  font-size: 1.8rem;
+}
+
+/* USER PAGE */
+
+/* user card */
+.user-page {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 3.6rem;
+  padding: 2.4rem 0;
+}
+
+.user-page-info {
+  background-color: #fff;
+  width: 35rem;
+  padding: 2.4rem 2.4rem 4.8rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.user-page-info img {
+  width: 100%;
+}
+
+.user-page-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+/* POSTS PAGE */
+.posts-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+  padding-top: 2.6rem;
+}
+
+.posts-page .user-card {
+  align-self: stretch;
+}
+
+/* post card */
+.post-card {
+  background-color: #fff;
+  padding: 2.4rem;
+}
+
+.post-card__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.4rem;
+}
+
+.post-card__title span {
+  font-size: 1.4rem;
+}
+
+.post-card__content {
+  margin-bottom: 1.6rem;
+}
+
+.user-page-posts .post-card__content {
+  margin-bottom: 0;
+}
+
+.post-card p {
+  font-size: 1.8rem;
+}
+
+/* comments */
+.post-card__comments {
+  font-size: 1.6rem;
+  color: #4b5563;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/* POSTS PAGE */
+
+.full-post {
+  padding-top: 2.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* media queries for 950 and below */
+@media screen and (max-width: 950px) {
+  .user-card,
+  .user-img,
+  .user-page-info,
+  .user-page-info img,
+  .user-page-post,
+  .post-card {
+    border-radius: 0.6rem;
+    box-shadow: 0 0 0.6rem 0.2rem #bbbfca2d;
+  }
+
+  /* decrease fonts */
+  h2 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.4rem;
+  }
+
+  .user-name {
+    font-size: 2.4rem;
+  }
+
+  .user-description p {
+    font-size: 1.6rem;
+  }
+
+  .post-card p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+  }
+
+  .post-card__comments {
+    font-size: 1.4rem;
+    gap: 0.4rem;
+  }
+
+  /* change UI */
+  .user-page {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+
+/* media queries for phones */
+@media screen and (max-width: 600px) {
+  /* decrease fonts */
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  .user-name {
+    font-size: 2rem;
+  }
+
+  .user-description p {
+    font-size: 1.4rem;
+  }
+
+  .post-card p {
+    font-size: 1.4rem;
+  }
+
+  .post-card__comments {
+    font-size: 1.2rem;
+    gap: 0.2rem;
+  }
+
+  /* change ui */
+  .user-page-info {
+    align-self: stretch;
+    width: 100%;
+  }
+}
