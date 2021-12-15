@@ -1,0 +1,6 @@
+<h1>Create a new User</h1>
+<%= form_with(model: User.new, url: users_path, method: :post) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>

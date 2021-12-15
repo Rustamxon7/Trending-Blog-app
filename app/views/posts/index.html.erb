@@ -1,3 +1,28 @@
-<h1>Post #index by username</h1>
-<p>Post Title index</p>
-<p>Go back to user <a href="http://localhost:3000/users/index">index</a></p>
+<div class="container">
+<section class="posts-page">
+  <div class="user-card">
+    <img src="https://avatars.githubusercontent.com/u/69011963?v=4" alt="User image" class="user-img" />
+    <div class="user-description">
+      <h1 class="user-name"><%= @user.name %></h1>
+      <p>Number of posts: <span id="user-posts"><%= @user.posts_counter %></span></p>
+    </div>
+  </div>
+
+  <% @posts.each do |post| %>
+  <div class="post-card">
+    <div class="post-card__content">
+      <div class="post-card__title">
+        <h2><%= post.title %>L</h2>
+        <span>Comments <%= post.comments.count %>, Likes <%= post.likes.count %></span>
+      </div>
+      <p><%= post.text %></p>
+    </div>
+    <ul class="post-card__comments">
+      <% post.recent_comments.each do |comment| %>
+      <li><span class="bold">Josephine Hernandez</span>: Wow really amazing post 😊👏 <%= link_to 'Delete', post_comment_path(post, comment), method: :delete, class: 'user-bio__posts_comment_delete' %></li>
+        <% end %>
+    </ul>
+  </div>
+  <% end %>
+</section>
+</div>

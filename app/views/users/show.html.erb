@@ -1,3 +1,28 @@
-<h1>User name</h1>
-<p>User Title show</p>
-<p>Go to posts <a href="/users/index/posts">here</a></p>
+<div class="container">
+  <section class="user-page">
+    <div class="user-page-info">
+      <img src="https://avatars.githubusercontent.com/u/69011963?v=4" alt="User img" />
+      <div class="user-page-info__description">
+        <h2><%= @user.name %></h2>
+        <p>Number of posts: <span id="user-posts"><%= @user.posts_counter %></span></p>
+      </div>
+      <div class="user--page-info__bio">
+        <h2>About me</h2>
+        <p><%= @user.bio %></p>
+      </div>
+    </div>
+    <div class="user-page-posts">
+      <% @user.recent_posts.each do |posts| %>
+      <div class="post-card">
+        <div class="post-card__content">
+          <div class="post-card__title">
+            <h2><%= link_to posts.title, user_post_path(@user, posts)%> <%= link_to "Destroy", user_post_path(@user, posts), :method => :delete, :confirm => "Are you sure?" %></h2>
+            <span>Comments <%= posts.comments.count %>, Likes <%= posts.likes.count %></span>
+          </div>
+          <p><%= posts.text %></p>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
+</div>
