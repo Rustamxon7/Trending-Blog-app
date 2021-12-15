@@ -1,0 +1,6 @@
+<h1>Create new post </h1>
+<%= form_with(model: Comment.new, url: post_comments_path, method: :post) do |f| %>
+  <%= f.label :text %>
+  <%= f.text_field :text %>
+  <%= f.submit %>
+<% end %>
