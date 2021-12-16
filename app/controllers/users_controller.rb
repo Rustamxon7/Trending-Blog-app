@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @post = Post.where(author_id: @user.id)
+    @post = Post.order(created_at: :desc).where(author_id: @user.id)
   end
 
   def new
@@ -28,6 +28,9 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
+    @user.likes.destroy_all
+    @user.comments.destroy_all
+    @user.posts.destroy_all
     @user.destroy
     redirect_to users_path
   end

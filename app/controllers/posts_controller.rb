@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     @user = current_user
-    @posts = Post.where(author_id: current_user.id).order(created_at: :desc)
+    @posts = Post.order(created_at: :desc).where(author_id: current_user.id)
   end
 
   def show
@@ -26,12 +26,10 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    flash[:notice] =
-      if @post.destroy
-        'Post successfully deleted!'
-      else
-        'Post could not be deleted!'
-      end
+    @post.likes.destroy_all
+    @post.comments.destroy_all
+    @post.destroy
+    flash[:notice] = @post.destroy ? 'Post successfully deleted!' : 'Post could not be deleted!'
     redirect_to user_posts_path
   end
 
