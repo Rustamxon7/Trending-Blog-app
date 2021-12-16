@@ -1,17 +1,7 @@
-      <section class="login-section">
-        <div class="logo-container">
-          <img src="https://avatars.githubusercontent.com/u/69011963?u=e3db5bd13da14c6d99fa219fe40cdbac9028472a&v=4" alt="logo" class="logo-img" />
-          <h1 class="logo">Add User</h1>
-        </div>
-        <div class="login-container">
-            <%= form_with(model: User.new, url: users_path, method: :post) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :photo %>
-  <%= f.text_field :photo %>
-  <%= f.label :bio %>
-  <%= f.text_area :bio %>
-  <%= f.submit %>
-<% end %>
-        </div>
-      </section>
+<section class="login-section">
+  <div class="logo-container">
+    <img src="https://avatars.githubusercontent.com/u/69011963?u=e3db5bd13da14c6d99fa219fe40cdbac9028472a&v=4" alt="logo" class="logo-img" />
+    <h1 class="logo">Add User</h1>
+  </div>
+  <div class="login-container"><%= form_with(model: User.new, url: users_path, method: :post) do |f| %> <%= f.label :name %> <%= f.text_field :name %> <%= f.label :photo %> <%= f.text_field :photo %> <%= f.label :bio %> <%= f.text_area :bio %> <%= f.submit %> <% end %></div>
+</section>

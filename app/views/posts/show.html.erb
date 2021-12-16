@@ -1,23 +1,19 @@
 <div class="container">
-<section class="full-post">
-  <div class="post-card">
-    <div class="post-card__content">
-      <div class="post-card__title">
-        <h2><%= @post.title %> by <%= @user.name %></h2>
-        <span>Comments <%= @post.comments.count %>, Likes <%= @post.likes.count %></span>
+  <section class="full-post">
+    <div class="post-card">
+      <div class="post-card__content">
+        <div class="post-card__title">
+          <h2><%= @post.title %> by <%= @user.name %></h2>
+          <span>Comments <%= @post.comments.count %>, Likes <%= @post.likes.count %></span>
+        </div>
+        <p><%= @post.text %></p>
       </div>
-      <p><%= @post.text %></p>
+      <ul class="post-card__comments">
+        <% @post.comments.each do |comment| %>
+        <li><span class="bold">Josephine Hernandez</span>: Wow really amazing post 😊👏 <%= link_to 'Delete', post_comment_path(@post, comment), method: :delete, class: 'user-bio__posts_comment_delete' %></li>
+        <% end %>
+      </ul>
+      <%= form_with(model: Comment.new, class: "comment", url: post_comments_path(@post)) do |f| %> <%= f.text_field :text, class: "comment-textarea", placeholder: "Add a comment..." %> <%= f.button "Add", class: "btn" %> <% end %>
     </div>
-    <ul class="post-card__comments">
-      <% @post.comments.each do |comment| %>
-      <li><span class="bold">Josephine Hernandez</span>: Wow really amazing post 😊👏 <%= link_to 'Delete', post_comment_path(@post, comment), method: :delete, class: 'user-bio__posts_comment_delete' %></li>
-      <% end %>
-    </ul>
-                    <%= form_with(model: Comment.new, class: "comment", url: post_comments_path(@post)) do |f| %>
-
-    <%= f.text_field :text, class: "comment-textarea", placeholder: "Add a comment..." %>
-    <%= f.button "Add", class: "btn" %>
-    <% end %>
-  </div>
-</section>
+  </section>
 </div>

@@ -1,3 +1,84 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+/* POSTS PAGE */
+.posts-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+/* post card */
+.post-card {
+  background-color: #fff;
+  padding: 2.4rem;
+}
+
+.post-card__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.4rem;
+}
+
+.post-card__title span {
+  font-size: 1.4rem;
+}
+
+.posts-page .user-card {
+  align-self: stretch;
+}
+
+.post-card__content {
+  margin-bottom: 1.6rem;
+}
+
+.post-card p {
+  font-size: 1.8rem;
+}
+
+/* POSTS PAGE */
+
+.full-post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3.6rem 0;
+}
+
+.full-post h1 {
+  font-size: 2.4rem;
+  color: #111827;
+  margin-bottom: 2.4rem;
+}
+
+// create post btn
+.create_post {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.6rem;
+  background-color: #fff;
+  border: 1px solid #111827;
+  border-radius: 0.8rem;
+  font-size: 1.4rem;
+  color: #111827;
+  cursor: pointer;
+}
+
+// show all posts btn
+.show-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem;
+  background-color: #fff;
+  border: 1px solid #111827;
+  border-radius: 0.8rem;
+  font-size: 1.4rem;
+  color: #111827;
+  cursor: pointer;
+  width: 100px;
+}

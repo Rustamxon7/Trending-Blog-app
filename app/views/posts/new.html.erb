@@ -1,21 +1,11 @@
-
 <div class="container">
-<section class="full-post">
-<h1>Create new post </h1>
-<div class="add">
-          <%= form_with(model: Post.new, url: user_posts_path, method: :post) do |f| %>
-  <p>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  </p>
-  <p>
-  <%= f.label :text %>
-  <%= f.text_area :text %>
-  <%# submit %>
-  <%= f.button class: 'btn' %>
-    </p>
-<% end %>
-
-</div>
-</section>
+  <section class="full-post">
+    <h1>Create new post</h1>
+    <div class="add">
+      <%= form_with(model: Post.new, url: user_posts_path, method: :post) do |f| %>
+      <p><%= f.label :title %> <%= f.text_field :title %></p>
+      <p><%= f.label :text %> <%= f.text_area :text %> <%# submit %> <%= f.button class: 'btn' %></p>
+      <% end %>
+    </div>
+  </section>
 </div>

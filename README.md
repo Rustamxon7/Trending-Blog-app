@@ -6,6 +6,7 @@ The Blog app is a classic example of a blog website. It's a functional website t
 
 - Ruby v3.0.1
 - Ruby on Rails v6.1.4.1
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
@@ -15,20 +16,26 @@ git clone https://github.com/Rustamxon7/Trending-Blog-app.git
 cd Trending-Blog-app
 
 ### Prerequisites
+
 Ruby: 2.6.3 Rails: 5.2.3 Postgres: >=9.5
 
 ### Setup
+
 Install gems with:
+
 ```
 bundle install
 ```
+
 Setup database with:
+
 ```
 rails db:create
 rails db:migrate
 ```
 
 ### Usage
+
 Start server with:
 
 ```
@@ -38,19 +45,27 @@ rails server
 Open http://localhost:3000/ in your browser.
 
 ### Run tests
+
 Install npm with:
+
 ```
 npm i
 ```
+
 Install rspec with:
+
 ```
 bundle install
 ```
+
 and
+
 ```
 rails generate rspec:install
 ```
+
 run the test with:
+
 ```
 rspec spec
 ```

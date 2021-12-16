@@ -1,7 +1,7 @@
 <div class="container">
   <section class="user-page">
     <div class="user-page-info">
-    <img src="<%= @user.photo %>" alt="User image" class="user-img" />
+      <img src="<%= @user.photo %>" alt="User image" class="user-img" />
       <div class="user-page-info__description">
         <h2><%= @user.name %></h2>
         <p>Number of posts: <span id="user-posts"><%= @user.posts_counter %></span></p>
@@ -10,26 +10,22 @@
         <h2>About me</h2>
         <p><%= @user.bio %></p>
       </div>
-      <%= link_to "Create post", new_user_post_path(@user), class: "btn btn-primary" %>
+      <%= link_to "Create post", new_user_post_path(@user), class: "btn create_post" %>
     </div>
-      <% @user.recent_posts.each do |posts| %>
+    <% @user.recent_posts.each do |posts| %>
     <div class="user-page-posts">
       <div class="post-card">
         <div class="post-card__content">
           <div class="post-card__title">
-            <h2><%= link_to posts.title, user_post_path(@user, posts)%> <%= link_to "Destroy", user_post_path(@user, posts), :method => :delete, :confirm => "Are you sure?" %></h2>
+            <h2><%= link_to posts.title, user_post_path(@user, posts)%> <%= link_to "Destroy", user_post_path(@user, posts), :method => :delete, :confirm => "Are you sure?", class: "btn btn-danger" %></h2>
             <span>Comments <%= posts.comments.count %>, Likes <%= posts.likes.count %></span>
           </div>
-          
-                      <p><%= posts.preview %>...</p>
+
+          <p><%= posts.preview %>...</p>
         </div>
       </div>
 
-        <% end %>
-        <%# button to http://localhost:3000/users/1/posts %>
-        <button class="btn">
-        <%= link_to "All posts", user_posts_path(@user) %>
-</button>
+      <% end %> <%# button to http://localhost:3000/users/1/posts %> <%= link_to "All posts", user_posts_path(@user), class: "show-all" %>
     </div>
   </section>
 </div>
