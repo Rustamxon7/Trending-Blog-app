@@ -1,31 +1,37 @@
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
-  describe 'GET /index' do
-    it 'returns http success' do
-      get '/users/index'
-      expect(response).to have_http_status(:success)
+  describe 'GET /users' do
+    it 'works! (now write some real specs)' do
+      get users_path
+      expect(response).to have_http_status(200)
+    end
+
+    it 'should return a list of users' do
+      get users_path
+      expect(response.body).to include('users-section')
     end
   end
 
-  describe 'GET /index' do
-    it 'includes the user title index' do
-      get '/users/index'
-      expect(response.body).to include('User')
+  describe 'GET /users/new' do
+    it 'should return a new user form' do
+      get new_user_path
+      expect(response.body).to include('Add User')
     end
   end
 
-  describe 'GET /show' do
-    it 'returns http success' do
-      get '/users/show'
-      expect(response).to have_http_status(:success)
+  describe 'POST /users' do
+    it 'should create a new user' do
+      post users_path, params: { user: { name: 'test', photo: 'test', bio: 'test' } }
+      expect(response).to redirect_to(user_path(User.last))
     end
   end
 
-  describe 'GET /show' do
-    it 'includes the user title show' do
-      get '/users/show'
-      expect(response.body).to include('User Title show')
+  describe 'GET /users/:id' do
+    it 'should return a user' do
+      user = User.create(name: 'test', photo: 'test', bio: 'test')
+      get user_path(user)
+      expect(response.body).to include('test')
     end
   end
 end

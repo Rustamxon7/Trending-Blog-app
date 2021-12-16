@@ -1,3 +1,97 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+/* USERS */
+
+.users-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  justify-content: center;
+  padding: 2.4rem 0;
+}
+
+.user-card {
+  display: flex;
+  gap: 2.4rem;
+  padding: 1.6rem;
+  background-color: #fff;
+}
+
+.user-card img {
+  height: 9.6rem;
+  width: 9.6rem;
+  object-fit: cover;
+  object-position: top;
+}
+
+.user-name {
+  font-size: 3.2rem;
+  color: #111827;
+  letter-spacing: -0.05rem;
+}
+
+.user-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.user-description p {
+  font-size: 1.8rem;
+}
+
+/* USER PAGE */
+
+/* user card */
+.user-page {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 3.6rem;
+  padding: 2.4rem 0;
+}
+
+.user-page-info {
+  background-color: #fff;
+  width: 35rem;
+  padding: 2.4rem 2.4rem 4.8rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.user-page-info img {
+  width: 100%;
+}
+
+.user-page-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.user-page-posts .post-card__content {
+  margin-bottom: 0;
+}
+
+// create_user btn
+.create_user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.8rem;
+  font-size: 1.6rem;
+  color: #33353a;
+  cursor: pointer;
+  text-decoration: unset;
+  width: 16rem;
+}
+
+.create_user:hover {
+  background-color: #f5f5f5;
+}

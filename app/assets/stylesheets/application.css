@@ -13,3 +13,72 @@
  *= require_tree .
  *= require_self
  */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #374151;
+  background-color: #f6f7fc;
+}
+
+h2 {
+  font-size: 2.4rem;
+  color: #111827;
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* set border radius */
+.user-card,
+.user-img,
+.user-page-info,
+.user-page-info img,
+.user-page-post,
+.post-card {
+  border-radius: 0.9rem;
+  box-shadow: 0 0 1rem 0.4rem #bbbfca2d;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+/* Button destroy */
+
+.btn-danger {
+  background-color: #fcd34d;
+  color: #000;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
