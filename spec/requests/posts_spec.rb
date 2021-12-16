@@ -1,31 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
-  describe 'GET /index' do
-    it 'returns http success' do
-      get '/users/index/posts/index'
-      expect(response).to have_http_status(:success)
+  describe 'validations' do
+    it 'validates the presence of the title' do
+      post = Post.new
+      expect(post).to_not be_valid
+      expect(post.errors[:title]).to include("can't be blank")
     end
-  end
 
-  describe 'GET /index' do
-    it 'includes the post title index' do
-      get '/users/index/posts/index'
-      expect(response.body).to include('Post Title')
+    it 'validates the length of the title' do
+      post = Post.new(title: 'a' * 251)
+      expect(post).to_not be_valid
+      expect(post.errors[:title]).to include('is too long (maximum is 250 characters)')
     end
-  end
 
-  describe 'GET /show' do
-    it 'returns http success' do
-      get '/users/index/posts/show'
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe 'GET /show' do
-    it 'includes the post title show' do
-      get '/users/show/posts/show'
-      expect(response.body).to include('Post Title show')
-    end
+    #   validates :comments_count, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   end
 end
