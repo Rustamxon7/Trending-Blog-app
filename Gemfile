@@ -61,3 +61,6 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Prettier Ruby code
 gem 'prettier'
+
+# Devise
+gem 'devise'
