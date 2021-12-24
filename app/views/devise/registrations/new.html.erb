@@ -1,0 +1,21 @@
+<section class="login-section">
+  <div class="logo-container">
+    <img src="https://avatars.githubusercontent.com/u/69011963?u=e3db5bd13da14c6d99fa219fe40cdbac9028472a&v=4" alt="logo" class="logo-img" />
+    <h1 class="logo">Sign up</h1>
+  </div>
+  <div class="login-container">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %> <%= render "devise/shared/error_messages", resource: resource %> 
+    <%= f.label :name %>
+    <%= f.text_field :name, autofocus: true %> 
+    <%= f.label :photo %>
+    <%= f.text_field :photo, autofocus: true %>
+    <%= f.label :bio %>
+    <%= f.text_area :bio, autofocus: true %>
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %> <%= f.label :password %> <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %>
+    <%= f.password_field :password, autocomplete: "new-password" %> <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %> <%= f.submit "Sign up" %> <% end %> <%= render "devise/shared/links" %>
+  </div>
+</section>

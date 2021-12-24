@@ -10,6 +10,6 @@
         <p>Number of posts: <span id="user-posts"><%= user.posts_counter%></span></p>
       </div>
     </div>
-    <% end %> <%= link_to "Create new user", new_user_path, class: 'btn create_user'%>
+    <% end %> <%= link_to "Create new user", user_session_url, class: 'btn create_user'%>
   </section>
 </div>
