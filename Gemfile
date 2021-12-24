@@ -64,3 +64,6 @@ gem 'prettier'
 
 # Devise
 gem 'devise'
+
+# CanCanCan
+gem 'cancancan'
