@@ -1,8 +1,11 @@
 require 'rails_helper'
+# rubocop:disable Metrics/BlockLength
+
 RSpec.feature 'Posts #Index', type: :feature do
   background do
     visit new_user_session_path
-    @user1 = User.create(name: 'Rustamjon', bio: 'Rustamjon is Full-Stack developer', photo: 'photo', email: 'good@gmail.com', confirmed_at: Time.now, password: '123456')
+    @user1 = User.create(name: 'Rustamjon', bio: 'Rustamjon is Full-Stack developer', photo: 'photo',
+                         email: 'good@gmail.com', confirmed_at: Time.now, password: '123456')
     within 'form' do
       fill_in 'Email', with: @user1.email
       fill_in 'Password', with: @user1.password
@@ -71,4 +74,5 @@ RSpec.feature 'Posts #Index', type: :feature do
     click_link 'test'
     expect(page).to have_content('test')
   end
+  # rubocop:enable Metrics/BlockLength
 end
