@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
+  skip_before_action :verify_authenticity_token
   def index
-    @user = current_user
+    @user = User.includes(:posts).find(current_user.id)
     @posts = Post.order(created_at: :desc).where(author_id: current_user.id)
   end
 

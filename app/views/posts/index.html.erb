@@ -12,7 +12,7 @@
     <div class="post-card">
       <div class="post-card__content">
         <div class="post-card__title">
-          <h2><%= post.title %>L</h2>
+          <h2><%= link_to post.title, user_post_path(@user, post)%></h2>
           <span>Comments <%= post.comments.count %>, Likes <%= post.likes.count %></span>
         </div>
         <p><%= post.preview %>...</p>
@@ -23,7 +23,7 @@
         <% end %>
       </ul>
     </div>
-
     <% end %>
+    <%= link_to "All posts", user_posts_path(@user), class: "show-all" %>
   </section>
 </div>

@@ -14,6 +14,7 @@
         <% end %>
       </ul>
       <%= form_with(model: Comment.new, class: "comment", url: post_comments_path(@post)) do |f| %> <%= f.text_field :text, class: "comment-textarea", placeholder: "Add a comment..." %> <%= f.button "Add", class: "btn" %> <% end %>
+      
     </div>
   </section>
 </div>
