@@ -70,3 +70,6 @@ gem 'devise-jwt'
 
 # Swagger
 gem 'rswag'
+
+# CanCanCan
+gem 'cancancan', '~> 1.9'
