@@ -64,3 +64,6 @@ gem 'prettier'
 
 # Devise
 gem 'devise'
+
+# JWT
+gem 'devise-jwt'
