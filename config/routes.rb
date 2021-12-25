@@ -9,4 +9,8 @@ Rails.application.routes.draw do
     resources :likes
     resources :comments
   end
+
+  namespace :api, defaults: { format: :json } do
+    resources :users, only: %i[index]
+  end
 end
