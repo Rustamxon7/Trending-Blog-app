@@ -67,3 +67,6 @@ gem 'devise'
 
 # JWT
 gem 'devise-jwt'
+
+# Swagger
+gem 'rswag'
