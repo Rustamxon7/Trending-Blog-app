@@ -9,4 +9,10 @@ Rails.application.routes.draw do
     resources :likes
     resources :comments
   end
+
+  namespace :api, defaults: { format: :json } do
+    resources :posts, only: [:index] do
+      resources :comments, only: %i[create index]
+    end
+  end
 end

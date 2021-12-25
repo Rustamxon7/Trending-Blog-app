@@ -64,3 +64,12 @@ gem 'prettier'
 
 # Devise
 gem 'devise'
+
+# JWT
+gem 'devise-jwt'
+
+# Swagger
+gem 'rswag'
+
+# CanCanCan
+gem 'cancancan', '~> 1.9'
